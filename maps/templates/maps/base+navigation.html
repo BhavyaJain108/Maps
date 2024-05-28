@@ -1,0 +1,7 @@
+{% extends 'maps/base.html' %}
+
+{% block navigation %}
+    <a id="id_create" href="{% url 'upload_data' %}">CREATE</a><br>
+    <a id="id_loading" href="{% url 'train_model' %}">TRAINING</a><br>
+{% endblock %}
+

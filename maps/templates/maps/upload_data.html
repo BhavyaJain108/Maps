@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Upload Fine-Tuning Data</title>
-</head>
-<body>
-    <h2>Upload Fine-Tuning Data</h2>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="file" name="file">
-        <br><br>
-        <input type="submit" value="Upload">
-    </form>
-</body>
-</html>
+{% extends 'maps/base+navigation.html' %}
+
+{% block content %} 
+    <div class="chat-container">
+
+    </div>
+    <div class="input-container">
+        <textarea class="prompt-textarea" id="prompt-textarea" rows="1"></textarea>
+        <button class="round-button">+</button>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            autosize(document.getElementById('prompt-textarea'));
+        });
+    </script>
+{% endblock %}

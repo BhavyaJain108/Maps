@@ -1,0 +1,76 @@
+body {
+    margin: 0 25%;
+    height: 100vh;
+}
+
+.webpage-header {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navigation {
+    text-align: left;
+}
+
+.page-header {
+    text-align: center;
+}
+
+a {
+    text-transform: uppercase; /* Make text uppercase */
+    font-family: Arial, sans-serif; /* Set a readable font */
+    font-size: 15px; /* Base font size */
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* Set link color */
+    transition: transform 0.3s ease, font-size 0.3s ease; /* Smooth transition for hover effect */
+    display: inline-block; /* Ensure padding doesn't affect line height */
+    margin: 5px 0; /* Add some margin for spacing */
+}
+
+a:hover {
+    transform: scale(1.1); /* Grow in size on hover */
+    font-size: 18px; /* Slightly increase font size on hover */
+    color: grey; /* Optional: change color on hover */
+}
+
+.chat-container{
+    height: 80%;
+    width: 100%;
+    background-color: rgb(223, 226, 229);
+    border: 1px;
+    border-radius: 2%;
+    border-color: black;
+    overflow-y: scroll;
+}
+
+.input-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.prompt-textarea {
+    margin-right: 2%;
+    width: 100%; 
+    box-sizing: border-box; 
+    font-family: Arial, sans-serif; /* Set a readable font */
+    font-size: 15px; /* Base font size */
+    padding: 10px;
+    resize: none;
+}
+
+.round-button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    outline: none;
+}
+
+.round-button:hover {
+    background-color: grey;
+}
+
+
