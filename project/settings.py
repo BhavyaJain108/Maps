@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from configparser import ConfigParser
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,7 +32,11 @@ ALLOWED_HOSTS = []
 CONFIG = ConfigParser()
 CONFIG.read(BASE_DIR / "config.ini")
 OPENAI_API_KEY = CONFIG.get("OpenAI", "secret")
+POLYGON_API_KEY = CONFIG.get("PolygonIO", "secret")
+LANGCHAIN_API_KEY = CONFIG.get("LangChain", "secret")
 
+os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
+os.environ['LANGCHAIN_API_KEY'] = LANGCHAIN_API_KEY
 
 # Application definition
 

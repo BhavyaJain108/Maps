@@ -1,19 +1,19 @@
 import tiktoken
 import networkx as nx
 from openai import OpenAI
-from transformers import pipeline 
+import os
 
 model_name="gpt-3.5-turbo"
 
 class InvestmentAIClient:
     TOKEN_LIMIT = 8000
     
-    def __init__(self, model_name, api_key, role):
-        self.api_key = api_key
+    def __init__(self, model_name, role):
+        self.api_key = os.getenv['OPENAI_API_KEY']
         self.model_name = model_name
         self.role = role
         self.messages = [{"role": "system", "content": self.role}]
-        self.client = OpenAI(api_key=api_key)
+        self.client = OpenAI(api_key=os.getenv['OPENAI_API_KEY'])
         self.tokenizer = tiktoken.encoding_for_model(self.model_name)
         self.tokens = len(self.tokenizer.encode(self.messages))
 
@@ -55,3 +55,5 @@ class InvestmentAIClient:
         removed_tokens = 0
         while removed_tokens < tokens_to_remove:
             self._remove_from_messages(1)
+            
+    
